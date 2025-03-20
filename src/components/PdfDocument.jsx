@@ -124,9 +124,6 @@ const styles = StyleSheet.create({
   good: { backgroundColor: "#27ae60" }, // Green
   tableColumn: { flex: 1, fontSize: 10, textAlign: "center" },
   badgejobtitle: {
-    position: "absolute",
-    top: 10,
-    right: 10,
     backgroundColor: "#007bff",
     color: "#fff",
     paddingVertical: 5,
@@ -134,7 +131,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     fontSize: 12,
     fontWeight: "bold",
-   textAlign: "center",
+    textAlign: "center",
+  },
+  nameRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
 
@@ -154,12 +156,14 @@ const PdfDocument = ({ applicant }) => (
       {/* header */}
 
       <View style={styles.header}>
-        <Text style={styles.badgejobtitle}>{applicant.jobTitle}</Text>
         {/* Left Section */}
         <View style={styles.leftColumn}>
           <Image source={{ uri: "/user.png" }} style={styles.profileImage} />
           <View style={styles.infoContainer}>
-            <Text style={styles.name}>{applicant.name}</Text>
+            <View style={styles.nameRow}>
+              <Text style={styles.name}>{applicant.name}</Text>
+              <Text style={styles.badgejobtitle}>{applicant.jobTitle}</Text>
+            </View>
             <Text style={styles.appliedDate}>
               Applied on {applicant.appliedDate}
             </Text>
@@ -177,8 +181,6 @@ const PdfDocument = ({ applicant }) => (
             </View>
           </View>
         </View>
-
-        
       </View>
 
       {/* Personal Info */}
