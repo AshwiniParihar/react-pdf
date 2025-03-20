@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   leftColumn: {
     flexDirection: "row",
-    alignItems: "center",
+   
   },
   rightColumn: {
     fontSize: 14,
@@ -103,7 +103,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   infoContainer: {
-    justifyContent: "center",
+    position: "relative",
+    width: "100%",
   },
   name: {
     fontSize: 16,
@@ -132,11 +133,14 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "bold",
     textAlign: "center",
+   
+    
   },
   nameRow: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    position: "relative",
   },
 });
 
